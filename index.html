@@ -1109,11 +1109,11 @@ document.getElementById('uploadZone').addEventListener('drop', e => {
 // BOOTSTRAP
 // =========================================================
 (async function init() {
-  state.config = loadConfig();
-  if (!state.config) {
-    document.getElementById('configWrap').style.display = 'flex';
-    return;
-  }
+  // Config hardcodeada · el usuario final no la ve ni la configura
+  state.config = {
+    url: 'https://ajeiuplpswtpnlhbbffd.supabase.co',
+    key: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFqZWl1cGxwc3d0cG5saGJiZmZkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxMDg2ODgsImV4cCI6MjA5NDY4NDY4OH0.8tUXzzw3lqoy0bwxuCLiMX7SGo3djV8opo6YNzODp-w'
+  };
   initSupa();
   // ¿Hay sesión activa?
   const { data: { session } } = await state.supa.auth.getSession();
